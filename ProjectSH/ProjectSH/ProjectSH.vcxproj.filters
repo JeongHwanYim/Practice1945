@@ -13,6 +13,18 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="GameSource">
+      <UniqueIdentifier>{87907148-ebc3-4df8-9e27-e7440add9e19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameSource\Core">
+      <UniqueIdentifier>{9bff1bd5-a1f4-4a07-ad39-34c5da26aef7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameSource\1945">
+      <UniqueIdentifier>{166fcbba-97c9-4308-9e5b-bb51e551e775}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameSource\1945\Core">
+      <UniqueIdentifier>{7d5916fd-97be-4f65-85b1-34b5fdd5758f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -30,6 +42,15 @@
     <ClInclude Include="ProjectSH.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SHGameInterface.h">
+      <Filter>GameSource\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="SHGame.h">
+      <Filter>GameSource\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="SHGame1945.h">
+      <Filter>GameSource\1945\Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -37,6 +58,9 @@
     </ClCompile>
     <ClCompile Include="ProjectSH.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SHGameInterface.cpp">
+      <Filter>GameSource\Core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
