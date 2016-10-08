@@ -8,8 +8,8 @@ public:
 
 	virtual void OnFrame(float fDeltaTime) = 0;
 
-	void		OnMousePressed(int nKey) {};
-	void		OnMouseReleased(int nKey) {};
-	void		OnKeyPressed(int nKey) {};
-	void		OnKeyReleased(int nKey) {};
+	virtual void	OnMousePressed(int nKey) {};
+	virtual void	OnMouseReleased(int nKey) {};
+	virtual void	OnKeyPressed(int nKey) {};
+	virtual void	OnKeyReleased(int nKey) {};
 };

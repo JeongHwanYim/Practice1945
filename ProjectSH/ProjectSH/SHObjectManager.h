@@ -10,7 +10,7 @@ public:
 	void	OnFrame(float fDeltaTime);
 
 	template<typename T>
-	SHBaseObject* ConstructObject();
+	T* ConstructObject();
 	SHBaseObject* FindObject(int nGameId);
 	void DestructObject(int nGameId);
 
@@ -22,9 +22,9 @@ private:
 /////////////////////////////////////////////////////
 
 template<typename T>
-SHBaseObject* SHObjectManager::ConstructObject()
+T* SHObjectManager::ConstructObject()
 {
-	SHBaseObject* pObject = new T;
+	T* pObject = new T;
 	m_pObjectMap.insert(std::make_pair(pObject->GetGameId(), pObject));
 
 	return pObject;

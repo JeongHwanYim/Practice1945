@@ -26,12 +26,16 @@ public:
 	int			GetMouseX() { return m_XPos; }
 	int			GetMouseY() { return m_YPos; }
 
+	void		SetHWND(HWND hWnd) { m_hWnd = hWnd; }
+	HWND		GetHWND() { return m_hWnd; }
+
 private:
 	void		KeyHandle();
 
 private:
 	SHGame*		m_pGame;
 	ULONGLONG	m_nPrev;
+	HWND		m_hWnd;
 
 	FLOAT		m_fTargetDeltaTime;
 

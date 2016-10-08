@@ -32,6 +32,9 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 	LoadStringW(hInstance, IDC_PROJECTSH, szWindowClass, MAX_LOADSTRING);
 	MyRegisterClass(hInstance);
 
+	// Initialize Game Interface
+	gGameInterface->Initialize();
+
 	// Perform application initialization:
 	if (!InitInstance(hInstance, nCmdShow))
 	{
@@ -41,9 +44,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 	HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_PROJECTSH));
 
 	MSG msg;
-
-	// Initialize Game Interface
-	gGameInterface->Initialize();
 
 	// Main message loop:
 	while (true)
@@ -125,6 +125,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
 	ShowWindow(hWnd, nCmdShow);
 	UpdateWindow(hWnd);
+
+	gGameInterface->SetHWND(hWnd);
 
 	return TRUE;
 }

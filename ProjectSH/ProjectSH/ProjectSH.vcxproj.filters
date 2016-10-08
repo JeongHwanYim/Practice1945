@@ -37,6 +37,12 @@
     <Filter Include="GameSource\1945\Manager\CollisionManager">
       <UniqueIdentifier>{bf870ea7-8039-4d7c-af7f-bed088848fbe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameSource\1945\Object\Core">
+      <UniqueIdentifier>{093ad118-c27f-48d0-a0a3-3e838a98980b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameSource\1945\Object\Projectile">
+      <UniqueIdentifier>{3c1d6541-4c6e-4f15-a0f4-61f99fb167ef}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -63,9 +69,6 @@
     <ClInclude Include="SHGame1945.h">
       <Filter>GameSource\1945\Core</Filter>
     </ClInclude>
-    <ClInclude Include="SHBaseObject.h">
-      <Filter>GameSource\1945\Object</Filter>
-    </ClInclude>
     <ClInclude Include="SHPrimitive.h">
       <Filter>GameSource\1945\Core</Filter>
     </ClInclude>
@@ -74,6 +77,12 @@
     </ClInclude>
     <ClInclude Include="SHCollisionManager.h">
       <Filter>GameSource\1945\Manager\CollisionManager</Filter>
+    </ClInclude>
+    <ClInclude Include="SHBaseObject.h">
+      <Filter>GameSource\1945\Object\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="SHProjectile.h">
+      <Filter>GameSource\1945\Object\Projectile</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -91,6 +100,9 @@
     </ClCompile>
     <ClCompile Include="SHObjectManager.cpp">
       <Filter>GameSource\1945\Manager\ObjectManager</Filter>
+    </ClCompile>
+    <ClCompile Include="SHProjectile.cpp">
+      <Filter>GameSource\1945\Object\Projectile</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

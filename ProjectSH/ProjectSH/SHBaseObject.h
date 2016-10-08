@@ -19,6 +19,9 @@ public:
 	int GetGameId() { return m_nGameId; }
 	Point2D GetPosition() { return m_Pos; }
 	Vector2D GetVector() { return m_Vec; }
+
+	void SetPosition(Point2D Pos) { m_Pos = Pos; }
+	void SetVector(Vector2D Vec) { m_Vec = Vec; }
 private:
 	static int GeneratedGameId()
 	{
