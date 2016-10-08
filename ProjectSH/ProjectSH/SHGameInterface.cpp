@@ -11,7 +11,7 @@ void SHGameInterface::Initialize()
 {
 	m_XPos = 0, m_YPos = 0;
 	m_nPrev = GetTickCount64();
-	m_fTargetDeltaTime = 1000 / TARGET_FRAME;
+	m_fTargetDeltaTime = 1.0f / TARGET_FRAME;
 
 	m_BindKey = {
 		VK_LEFT,
@@ -21,10 +21,12 @@ void SHGameInterface::Initialize()
 	};
 
 	m_pGame = new SHGame1945;
+	m_pGame->Initialize();
 }
 
 void SHGameInterface::Finalize()
 {
+	m_pGame->Finalize();
 	delete m_pGame;
 	m_pGame = nullptr;
 }
@@ -35,7 +37,7 @@ void SHGameInterface::Run()
 
 	ULONGLONG nCur = GetTickCount64();
 
-	float fElapsedTime = (nCur - m_nPrev) / 1000;
+	float fElapsedTime = (nCur - m_nPrev) / 1000.0f;
 	if ( fElapsedTime >= m_fTargetDeltaTime)
 	{
 		m_pGame->OnFrame(fElapsedTime);
@@ -82,9 +84,9 @@ void SHGameInterface::KeyHandle()
 {
 	for (auto key : m_BindKey)
 	{
-		const SHORT CHANGE_STATE_MASK = 0x0001;
-		const SHORT PRESSED_STATE_MASK = 0x8000;
-		SHORT nKeyState = GetAsyncKeyState(key);
+		const USHORT CHANGE_STATE_MASK = 0x0001;
+		const USHORT PRESSED_STATE_MASK = 0x8000;
+		USHORT nKeyState = GetAsyncKeyState(key);
 
 		if ((nKeyState & PRESSED_STATE_MASK) != 0)
 		{

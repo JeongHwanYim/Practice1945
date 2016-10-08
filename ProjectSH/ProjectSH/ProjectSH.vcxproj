@@ -147,15 +147,21 @@
   <ItemGroup>
     <ClInclude Include="ProjectSH.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="SHBaseObject.h" />
+    <ClInclude Include="SHCollisionManager.h" />
     <ClInclude Include="SHGame.h" />
     <ClInclude Include="SHGame1945.h" />
     <ClInclude Include="SHGameInterface.h" />
+    <ClInclude Include="SHObjectManager.h" />
+    <ClInclude Include="SHPrimitive.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ProjectSH.cpp" />
+    <ClCompile Include="SHGame1945.cpp" />
     <ClCompile Include="SHGameInterface.cpp" />
+    <ClCompile Include="SHObjectManager.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

@@ -3,10 +3,13 @@
 class SHGame
 {
 public:
+	virtual void Initialize() = 0;
+	virtual void Finalize() = 0;
+
 	virtual void OnFrame(float fDeltaTime) = 0;
 
-	virtual void OnMousePressed(float fDeltaTime) {}
-	virtual void OnMouseReleased(float fDeltaTime) {}
-	virtual void OnKeyPressed(float fDeltaTime) {}
-	virtual void OnKeyReleased(float fDeltaTime) {}
+	void		OnMousePressed(int nKey) {};
+	void		OnMouseReleased(int nKey) {};
+	void		OnKeyPressed(int nKey) {};
+	void		OnKeyReleased(int nKey) {};
 };
