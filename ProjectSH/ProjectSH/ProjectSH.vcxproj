@@ -153,6 +153,7 @@
     <ClInclude Include="SHGame1945.h" />
     <ClInclude Include="SHGameInterface.h" />
     <ClInclude Include="SHObjectManager.h" />
+    <ClInclude Include="SHPlayer.h" />
     <ClInclude Include="SHPrimitive.h" />
     <ClInclude Include="SHProjectile.h" />
     <ClInclude Include="stdafx.h" />
@@ -160,9 +161,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ProjectSH.cpp" />
+    <ClCompile Include="S1BaseObject.cpp" />
     <ClCompile Include="SHGame1945.cpp" />
     <ClCompile Include="SHGameInterface.cpp" />
     <ClCompile Include="SHObjectManager.cpp" />
+    <ClCompile Include="SHPlayer.cpp" />
     <ClCompile Include="SHProjectile.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

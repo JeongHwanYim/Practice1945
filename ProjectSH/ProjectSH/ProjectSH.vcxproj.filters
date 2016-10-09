@@ -43,6 +43,9 @@
     <Filter Include="GameSource\1945\Object\Projectile">
       <UniqueIdentifier>{3c1d6541-4c6e-4f15-a0f4-61f99fb167ef}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameSource\1945\Object\Creature">
+      <UniqueIdentifier>{5444bdaa-ed80-42c1-a78f-a77ab1f244b3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -84,6 +87,9 @@
     <ClInclude Include="SHProjectile.h">
       <Filter>GameSource\1945\Object\Projectile</Filter>
     </ClInclude>
+    <ClInclude Include="SHPlayer.h">
+      <Filter>GameSource\1945\Object\Creature</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -103,6 +109,12 @@
     </ClCompile>
     <ClCompile Include="SHProjectile.cpp">
       <Filter>GameSource\1945\Object\Projectile</Filter>
+    </ClCompile>
+    <ClCompile Include="SHPlayer.cpp">
+      <Filter>GameSource\1945\Object\Creature</Filter>
+    </ClCompile>
+    <ClCompile Include="S1BaseObject.cpp">
+      <Filter>GameSource\1945\Object\Core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

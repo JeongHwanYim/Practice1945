@@ -34,8 +34,10 @@ private:
 
 private:
 	SHGame*		m_pGame;
-	ULONGLONG	m_nPrev;
 	HWND		m_hWnd;
+
+	LARGE_INTEGER	m_Freq;
+	LARGE_INTEGER	m_Prev;
 
 	FLOAT		m_fTargetDeltaTime;
 

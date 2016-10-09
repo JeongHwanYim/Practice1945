@@ -47,3 +47,7 @@
 Obj/
 Debug/
 Release/
+
+# Profile files
+*.vsp
+*.psess

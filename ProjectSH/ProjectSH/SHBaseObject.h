@@ -7,21 +7,32 @@ class SHBaseObject
 public:
 	SHBaseObject()
 		: m_nGameId(GeneratedGameId())
-	{
-	}
+		, m_nOwnerId(-1)
+	{}
 
-	virtual ~SHBaseObject()
-	{
-	}
+	SHBaseObject(int _nOwnerId)
+		: m_nGameId(GeneratedGameId())
+		, m_nOwnerId(_nOwnerId)
+	{}
+
+	virtual ~SHBaseObject() {}
 
 	virtual void OnFrame(float fDeltaTime) {};
 
 	int GetGameId() { return m_nGameId; }
-	Point2D GetPosition() { return m_Pos; }
-	Vector2D GetVector() { return m_Vec; }
+	Point2D GetLocalPosition() { return m_Pos; }
+	Vector2D GetLocalVector() { return m_Vec; }
 
-	void SetPosition(Point2D Pos) { m_Pos = Pos; }
-	void SetVector(Vector2D Vec) { m_Vec = Vec; }
+	Point2D GetWorldPosition();
+	Vector2D GetWorldVector();
+
+	void SetLocalPosition(Point2D Pos) { m_Pos = Pos; }
+	void SetLocalVector(Vector2D Vec) { m_Vec = Vec; }
+
+	void SetWorldPosition(Point2D Pos);
+	void SetWorldVector(Vector2D Vec);
+
+	int	GetOwnerId() { return m_nOwnerId; }
 private:
 	static int GeneratedGameId()
 	{
@@ -33,4 +44,6 @@ private:
 	int m_nGameId;
 	Point2D m_Pos;
 	Vector2D m_Vec;
+
+	int m_nOwnerId;
 };

@@ -9,8 +9,8 @@ class SHObjectManager
 public:
 	void	OnFrame(float fDeltaTime);
 
-	template<typename T>
-	T* ConstructObject();
+	template<typename T, typename... Args>
+	T* ConstructObject(Args&&... args);
 	SHBaseObject* FindObject(int nGameId);
 	void DestructObject(int nGameId);
 
@@ -21,14 +21,13 @@ private:
 
 /////////////////////////////////////////////////////
 
-template<typename T>
-T* SHObjectManager::ConstructObject()
+template<typename T, typename... Args>
+inline T* SHObjectManager::ConstructObject(Args&&... args)
 {
-	T* pObject = new T;
+	T* pObject = new T(args...);
 	m_pObjectMap.insert(std::make_pair(pObject->GetGameId(), pObject));
 
 	return pObject;
 }
-
 // 강화
 // 필살기류

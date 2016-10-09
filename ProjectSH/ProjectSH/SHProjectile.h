@@ -5,8 +5,8 @@
 class SHProjectile : public SHBaseObject
 {
 public:
-	SHProjectile() :
-		SHBaseObject(), m_fSpeed(0), m_fAdjTime(0)
+	SHProjectile(int nShooterId) :
+		SHBaseObject(), m_fSpeed(0), m_fAdjTime(0), m_nShooterId(nShooterId)
 	{
 
 	}
@@ -21,10 +21,12 @@ public:
 		m_Accel = Accel;
 		m_fAdjTime = fAdjTime;
 	}
-
+	void SetSpeed(float fSpeed) { m_fSpeed = fSpeed; }
 private:
 	Vector2D	m_Accel;
 	float		m_fAdjTime;
 
 	float		m_fSpeed;
+
+	int			m_nShooterId;
 };

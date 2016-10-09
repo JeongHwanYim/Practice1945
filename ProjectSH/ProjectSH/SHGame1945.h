@@ -16,9 +16,11 @@ public:
 	static SHGame1945* Get();
 
 	virtual void OnMousePressed(int nKey);
-
+	virtual void OnKeyPressed(int nKey);
 public:
 	SHObjectManager*	ObjectManager;
 	SHCollisionManager* CollisionManager;
 	HDC					HDC;
+
+	INT					PlayerId;
 };

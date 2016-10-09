@@ -6,7 +6,10 @@ void SHObjectManager::OnFrame(float fDeltaTime)
 	for (auto Itr : m_pObjectMap)
 	{
 		auto pObject = Itr.second;
-		pObject->OnFrame(fDeltaTime);
+		if (pObject)
+		{
+			pObject->OnFrame(fDeltaTime);
+		}
 	}
 
 	for (auto pDeleteObject : m_pDeleteObjectList)
