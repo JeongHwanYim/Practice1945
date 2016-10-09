@@ -5,7 +5,6 @@
 #include "SHGame1945.h"
 
 SHGameInterface* gGameInterface = new SHGameInterface;
-const int TARGET_FRAME = 60;
 
 void SHGameInterface::Initialize()
 {

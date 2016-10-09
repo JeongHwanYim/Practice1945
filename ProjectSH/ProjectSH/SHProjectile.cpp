@@ -18,19 +18,20 @@ void SHProjectile::OnFrame(float fDeltaTime)
 		Vec.Y += fAdjY;
 
 		m_fSpeed += SH::Normalize2D(fAdjX, fAdjY);
+
 		SH::Normalize2D(Vec.X, Vec.Y);
 
 		SetLocalVector(Vec);
 	}
 
 	{
-		Point2D Pos = GetWorldPosition();
-		Vector2D Vec = GetWorldVector();
+		Point2D Pos = GetLocalPosition();
+		Vector2D Vec = GetLocalVector();
 
 		Pos.X += (Vec.X * m_fSpeed * fDeltaTime);
 		Pos.Y += (Vec.Y * m_fSpeed * fDeltaTime);
 
-		SetWorldPosition(Pos);
+		SetLocalPosition(Pos);
 	}
 	
 	{

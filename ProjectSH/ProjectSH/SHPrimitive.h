@@ -47,7 +47,7 @@ namespace SH
 	{
 		Vector2D tmp(Vec);
 
-		Vec.X = tmp.X * diff.X + tmp.Y * diff.Y;
-		Vec.Y = tmp.X * -diff.Y + tmp.Y * diff.X;
+		Vec.X = tmp.X * diff.X + tmp.Y * -diff.Y;
+		Vec.Y = tmp.X * diff.Y + tmp.Y * diff.X;
 	}
 }

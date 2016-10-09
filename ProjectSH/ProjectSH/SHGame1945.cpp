@@ -81,7 +81,35 @@ void SHGame1945::OnMousePressed(int nKey)
 		SHProjectile* pObject = ObjectManager->ConstructObject<SHProjectile>(PlayerId);
 		pObject->SetWorldPosition(Point2D(fX, fY));
 		pObject->SetLocalVector(Vector2D(distX, distY));
-//		pObject->SetAccel(Vector2D(1000, 1000), 10.0f);
+		pObject->SetSpeed(200);
+	}
+	if (nKey == MK_RBUTTON)
+	{
+		SHPlayer* pPlayer = (SHPlayer *)ObjectManager->FindObject(PlayerId);
+		Point2D Pos = pPlayer->GetWorldPosition();
+
+		int nMouseX = gGameInterface->GetMouseX();
+		int nMouseY = gGameInterface->GetMouseY();
+
+		float distX = nMouseX - Pos.X;
+		float distY = nMouseY - Pos.Y;
+
+		SH::Normalize2D(distX, distY);
+
+		float theta = acos(distX);
+
+		float fX = Pos.X + (distX * 80);
+		float fY = Pos.Y + (distY * 80);
+
+		pPlayer->SetWorldVector(Vector2D(distX, distY));
+
+		SHProjectile* pObject = ObjectManager->ConstructObject<SHProjectile>(PlayerId);
+		pObject->SetWorldPosition(Point2D(fX, fY));
+		pObject->SetLocalVector(Vector2D(distX, distY));
+
+		Vector2D Accel(-1000, 1000);
+		SH::Rotation(Point2D(), Accel, Vector2D(distX, distY));
+		pObject->SetAccel(Accel, 300.0f);
 		pObject->SetSpeed(200);
 	}
 }
